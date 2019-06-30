@@ -1,5 +1,11 @@
+/* *{
+  border:2px solid blue
+} */
+
 body{
     background: black;
+    overflow-x: hidden;
+    height:auto;
 }
 
 p:nth-child(1) a {
@@ -8,18 +14,42 @@ p:nth-child(1) a {
     
   }
 
-  .glow {
-    font-family: Monoton;
+  .instructions{
+    visibility: visible;
+  }
 
-    font-size: 80px;
-    color: #fff;
+  .container{
+    visibility: hidden;
+  }
+  
+
+
+.glowOff{
+
+   
+    text-align: center;
+}
+
+  .glowOn {
+
     text-align: center;
     -webkit-animation: glow 0.2s ease-in-out infinite alternate;
     -moz-animation: glow 0.2s ease-in-out infinite alternate;
     animation: glow 0.2s ease-in-out infinite alternate;
   }
 
-  
+  .titleSize{
+    font-family: Monoton;
+    color: #fff;
+    font-size:80px
+  }
+
+  .center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   @-webkit-keyframes glow {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
@@ -29,3 +59,91 @@ p:nth-child(1) a {
       text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 100px #ff4da6, 0 0 80px #ff4da6, 0 0 150px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
   }
+
+  .rightColumnBorderOn{
+    border: 2px solid white;
+    -webkit-border-radius: 0px 25px 25px 0px;
+    -moz-border-radius: 0px 25px 25px 0px;
+    border-radius: 0px 25px 25px 0px;
+  }
+
+  
+.btn-outline-secondary{
+  border-radius: 10px 50px 50px 10px;
+-moz-border-radius: 10px 50px 50px 10px;
+-webkit-border-radius: 10px 50px 50px 10px;
+}
+
+.unorderedListStyle{
+  list-style: none;
+  right:26px;
+  position: relative;
+}
+
+.liveItem{
+  display: inline;
+  text-align: center;
+
+}
+
+#letter{
+  text-align: center
+}
+
+
+@media only screen and (max-width: 899px) {
+  .appendedButtons{
+ width:450px;
+  }
+ }
+
+@media only screen and (min-width: 1200px) {
+ .appendedButtons{
+width:400px;
+
+ }
+
+ .entireFormGroup{
+  position: relative;
+  left:100px;
+ }
+
+}
+
+
+.letter {
+  display: inline-block;
+  list-style: none;
+  width: 20px;
+  margin: 0 5px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  color: white;
+}
+.current-word {
+  list-style: none;
+}
+.output {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.correct {
+  background-color: green;
+  transition: all 1s ease;
+}
+.error {
+  color: red;
+  opacity: 1;
+}
+.warning {
+  color: orange;
+  opacity: 1;
+}
+.win {
+  color: green;
+  opacity: 1;
+}
+
+.underscore{
+  letter-spacing: 10px;
+}

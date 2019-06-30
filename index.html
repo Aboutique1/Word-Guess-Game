@@ -7,55 +7,91 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/tether.css">
 </head>
-<body>
-    <div class="container">
-   <div class="row justify-content-center text-center">
-       <div class="col text-center">
-           
-       </div>
-   </div>
-</div>
+<body id="body">
+
+
+
+
    
-<div class="row">
+  <div class="row">
         <div class="col-md-12">
             <br>
-                <p class="text-center display-3 glow" ><a  style="color:white" href="#">
-                    80's Babies Game
+                <p class="text-center display-5 glowOff titleSize" id="glowTitle" ><a  style="color:white" href="#">
+                    80's Babies Hangman
                   </a></p>
         </div>
-      </div>
+   </div>
 
 <hr><br>
-      <div class="container">
+
+
+      <div class="container" id="container">
+        <div class="row justify-content-center">
+       <div class="col-sm-12 text-center">
+           <h4 id="instructions" class="instructions text-light">Press any key to begin.</h4>
+           <br>
+           <br>
+           <br>
+           <ul id="lettersUnguessed"><li class="d-block text-light text-muted" ><small id="info"></small></li></ul>
+       </div>
+   </div>
 
             <div class="row justify-content-center">
-                    <div class="col-sm text-light text-center">
-                     Song Info
+            
+                    <div class="col-md-6 col-sm-12 text-light text-center"  style="padding-top:58px; margin-top:50px">
                      <br>
-                     <audio controls id="boombox">
+                     <audio controls autoplay id="boombox">
                             <source  id="boomboxSource" src="" type="audio/mpeg">
                             Your browser does not support the audio element.
                             </audio>
                             <br>
-                    <button id="playTM">Play Teena Marie</button>
                     </div>
-                    <div class="col-sm text-light text-center">
-                     Hangman Game
-                     <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="underscoresInput" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                              <span class="input-group-text" id="basic-addon2">Number of Characters</span>
-                            </div>
-                          </div>
-                    </div>
-                    
-                    <br>
-                   
-                  </div>
-                
 
-      </div>
+                    <div class="col-md-6 col-sm-12 text-light justify-content-center form-inline text-center mt-5" style="padding-top:75px; margin-top:40px">
+                       <div class="col-sm-12 text-center">
+                          <p id="output" class="display-5 text-light output"></p>
+                    </div>
+       <form id="submitLetter" autocomplete="off" action="#" onsubmit="event.preventDefault(); submitLetter()">
+                 <div class="input-group entireFormGroup">
+  <input type="text" autocomplete="off" maxlength="1" minlength="1" name="letter" id="letter" onkeyup="upperCaseAll()" class="form-control bg-dark" placeholder="Guess a Letter" aria-label="Recipient's username" aria-describedby="basic-addon2" >
+  <div class="input-group-append appendedButtons">
+    <button class="btn btn-outline-secondary" id="guess" type="submit">Guess</button>
+    <button style="border" class="btn btn-outline-secondary" type="button">Reset</button>
+</div>
+    
+  </div>
+</form>
+   
+
+    <div class="col-sm-12 text-light text-center justify-content-center mt-5">
+                     <ul class="unorderedListStyle" id="lives" style="margin: 0 auto">
+                     <li id="live1"  class="liveItem"><img width="25" src="./assets/images/SmileyFace.png"/></li>
+                     <li id="live2" class="liveItem"><img width="25"  src="./assets/images/SmileyFace.png"/></li>
+                     <li id="live3" class="liveItem"><img width="25"  src="./assets/images/SmileyFace.png"/></li>
+                     </ul>
+                     <p id="man" class="">You have 3 lives.</p>
+                    </div>
+</div>
+                    </div>
+
+                       
+
+                       <ul id="hangmanController" class=" text-light text-center justify-content-center" >
+                       <li class="d-inline">
+                            <img id="hangmanImage3" src="./assets/images/hangmanlive3Transparent.png" >  
+                       </li>
+                       <li class="d-inline">
+                            <img id="hangmanImage2" src="./assets/images/hangmanlive2Transparent.png">  
+                       </li>
+                            <img id="hangmanImage1" src="./assets/images/hangmanlive1Transparent.png">  
+                       </li>
+                       
+
+                    
+                      </ul>
 
 
 
@@ -68,6 +104,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="./assets/javascript/game.js"></script>
+<script src="./assets/javascript/tether.js"></script>
+
 </body>
 </html>
 
